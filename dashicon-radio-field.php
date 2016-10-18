@@ -18,15 +18,15 @@ License: GPL-2.0+
  * @param  object $field_type_object
  * @return void
  */
-function cmb2_render_dashicon_radio_callback( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
+function ml_cmb2_render_dashicon_radio_callback( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
 
 	if ( 'dashicon_radio' === $field->args['type'] ) {
-		$field->args['options'] = cmb2_dashicons_return_array();
+		$field->args['options'] = ml_cmb2_dashicons_return_array();
 	}
 	echo $field_type_object->radio();
 
 }
-add_action( 'cmb2_render_dashicon_radio', 'cmb2_render_dashicon_radio_callback', 10, 5 );
+add_action( 'cmb2_render_dashicon_radio', 'ml_cmb2_render_dashicon_radio_callback', 10, 5 );
 
 /**
  * Custom labels for dashicon_radio inputs
@@ -37,7 +37,7 @@ add_action( 'cmb2_render_dashicon_radio', 'cmb2_render_dashicon_radio_callback',
  * @param  object $cmb
  * @return array
  */
-function cmb2_dashicon_radio_attributes( $args, $defaults, $field, $cmb ) {
+function ml_cmb2_dashicon_radio_attributes( $args, $defaults, $field, $cmb ) {
 
 	if ( 'dashicon_radio' === $field->args['type'] ) {
 		foreach ( cmb2_dashicons_return_array() as $dashicon => $name ) {
@@ -48,14 +48,14 @@ function cmb2_dashicon_radio_attributes( $args, $defaults, $field, $cmb ) {
 	}
 	return $args;
 }
-add_filter( 'cmb2_list_input_attributes', 'cmb2_dashicon_radio_attributes', 10, 4 );
+add_filter( 'cmb2_list_input_attributes', 'ml_cmb2_dashicon_radio_attributes', 10, 4 );
 
 /**
  * Custom CMB2 css for dashicon_radio field
  *
  * @return void
  */
-function cmb2_dashicon_radio_css() {
+function ml_cmb2_dashicon_radio_css() {
 	?>
 	<style type="text/css" media="screen">
 		.cmb-type-dashicon-radio .cmb-td {
@@ -70,14 +70,14 @@ function cmb2_dashicon_radio_css() {
 	</style>
 	<?php
 }
-add_action( 'admin_head', 'cmb2_dashicon_radio_css' );
+add_action( 'admin_head', 'ml_cmb2_dashicon_radio_css' );
 
 /**
  * Returns array of dashicon data
  *
  * @return array
  */
-function cmb2_dashicons_return_array() {
+function ml_cmb2_dashicons_return_array() {
 
 	$icons = array(
 		'dashicons-menu' 				 	=> __( 'Menu', 'cmb2' ),
