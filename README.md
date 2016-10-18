@@ -20,7 +20,7 @@ function cmb2_dashicon_radio_metabox() {
 	) );
 
 	$cmb->add_field( array(
-		'name'             => __( 'Test Radio Image', 'cmb2' ),
+		'name'             => __( 'Dashicon', 'cmb2' ),
 		'desc'             => __( 'field description (optional)', 'cmb2' ),
 		'id'               => $prefix . 'dashicon',
 		'type'             => 'dashicon_radio',		
