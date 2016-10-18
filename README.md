@@ -1,5 +1,8 @@
-```
+# Dashicon Radio CMB2 Field
 
+Radio value is dashicon class. 
+
+```
 function cmb2_dashicon_radio_metabox() {
 
 	$prefix = 'yourprefix_demo_';
